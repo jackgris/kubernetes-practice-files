@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: the-pod
+spec:
+  containers:
+    - name: the-container
+      image: g1g1/py-kube:0.3
+      volumeMounts:
+      - mountPath: "/mnt/data"
+        name: persistent-volume
+  volumes:
+    - name: persistent-volume
+      persistentVolumeClaim:
+        claimName: local-storage-claim
