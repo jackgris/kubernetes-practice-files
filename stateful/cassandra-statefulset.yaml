@@ -62,12 +62,20 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: cassandra-data
-        annotations:  # comment line if you want to use a StorageClass
+        # annotations:  # comment line if you want to use a StorageClass
           # or specify which StorageClass
-          volume.beta.kubernetes.io/storage-class: ""   # comment line if you
+          # volume.beta.kubernetes.io/storage-class: ""   # comment line if you
           # want to use a StorageClass or specify which StorageClass
       spec:
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:
             storage: 1Gi
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: fast
+provisioner: k8s.io/minikube-hostpath
+parameters:
+  type: pd-ssd
