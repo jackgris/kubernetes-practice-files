@@ -4,6 +4,7 @@ metadata:
   name: api-gateway
 spec:
   type: LoadBalancer
+  externalTrafficPolicy: Local
   ports:
   - port: 80
     targetPort: 5000
