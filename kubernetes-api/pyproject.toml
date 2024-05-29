@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "kubernetes-api"
+version = "0.1.0"
+description = ""
+authors = ["Gabriel Pozo <jackgris2@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+kubernetes = "^29.0.0"
+bpython = "^0.24"
+xonsh = {extras = ["full"], version = "^0.16.0"}
+pyyaml = "^6.0.1"
+pyright = "^1.1.365"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
